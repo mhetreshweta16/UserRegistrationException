@@ -13,7 +13,8 @@ namespace UserRegistrationException
         {
             NUll_Type_Exception,
             Empty_Type_Exception,
-            Class_Not_Found
+            Class_Not_Found,
+            ArgumentNullException
 
         }
 

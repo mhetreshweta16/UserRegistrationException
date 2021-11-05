@@ -22,8 +22,6 @@ namespace UserRegistrationException
         public string getValidUserFirstName()
         {
             Regex regex = new Regex(firstNamePattern);
-
-
             try
             {
                 if (regex.IsMatch(message))
@@ -35,13 +33,13 @@ namespace UserRegistrationException
                     return "invalid";
                 
             }
-            catch (NullReferenceException ex)
+            catch (ArgumentNullException ex)
             {
-                 //throw new CustomException(CustomException.ExceptionType.NUll_Type_Exception, "invalid");
-                Console.WriteLine(ex);
+                 throw new CustomException(CustomException.ExceptionType.ArgumentNullException, "invalid");
+                //Console.WriteLine(ex);
             }
 
-            return default;
+            
                   
         }
 

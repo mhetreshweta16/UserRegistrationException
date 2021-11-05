@@ -15,23 +15,16 @@ namespace TestingUserException
 
             //Act
             UserException testing = new UserException(message);
-            
-
-                string actual = testing.getValidUserFirstName();
-
-
-
 
             try
-            { //Assert
-                Assert.AreEqual(expected, actual);
-            }
-            catch(Exception ex)
             {
-                Console.WriteLine(ex);
+                string actual = testing.getValidUserFirstName();
             }
-            
-           
+            catch (CustomException ex)
+            {
+                //Assert
+                Assert.AreEqual(expected, ex.Message);
+            }          
             
         }
     }
