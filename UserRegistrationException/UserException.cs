@@ -23,6 +23,10 @@ namespace UserRegistrationException
         string mobileNoPattern = "^[1-9]{2}[ ]{1}[0-9]{10}$";
         string passwordPattern = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8}$";
 
+        /// <summary>
+        /// to valide the user first name
+        /// </summary>
+        /// <returns></returns>
         public string getValidUserFirstName()
         {
             Regex regex = new Regex(firstNamePattern);
@@ -44,6 +48,10 @@ namespace UserRegistrationException
             }               
         }
 
+        /// <summary>
+        /// to valide the user Last Name
+        /// </summary>
+        /// <returns></returns>
         public string getvalidUserLastName()
         {
 
@@ -66,6 +74,10 @@ namespace UserRegistrationException
             }
         }
 
+        /// <summary>
+        /// to valide the user email
+        /// </summary>
+        /// <returns></returns>
         public string getValidUserEmail()
         {
             Regex regex = new Regex(emailPattern);
@@ -87,6 +99,10 @@ namespace UserRegistrationException
             }
         }
 
+        /// <summary>
+        /// to valide the user mobile number
+        /// </summary>
+        /// <returns></returns>
         public string getValidUserMobileNumber()
         {
             Regex regex = new Regex(mobileNoPattern);
@@ -109,6 +125,10 @@ namespace UserRegistrationException
 
         }
 
+        /// <summary>
+        /// to valide the user password
+        /// </summary>
+        /// <returns></returns>
         public string getValidUserPassword()
         {
 

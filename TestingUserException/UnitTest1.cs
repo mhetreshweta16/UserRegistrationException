@@ -7,6 +7,9 @@ namespace TestingUserException
     [TestClass]
     public class UnitTest1
     {
+        /// <summary>
+        /// Tests the method1.
+        /// </summary>
         [TestMethod]
         public void TestMethod1()
         {
@@ -28,6 +31,9 @@ namespace TestingUserException
 
         }
 
+        /// <summary>
+        /// Tests the last name of the user.
+        /// </summary>
         [TestMethod]
         public void TestUserLastName()
         {
@@ -48,6 +54,9 @@ namespace TestingUserException
             }
         }
 
+        /// <summary>
+        /// Tests the user email.
+        /// </summary>
         [TestMethod]
         public void TestUserEmail()
         {
@@ -68,6 +77,9 @@ namespace TestingUserException
             }
         }
 
+        /// <summary>
+        /// Tests the user mobile number.
+        /// </summary>
         [TestMethod]
         public void TestUserMobileNumber()
         {
@@ -88,6 +100,9 @@ namespace TestingUserException
             }
         }
 
+        /// <summary>
+        /// Tests the user password.
+        /// </summary>
         [TestMethod]
         public void TestUserPassword()
         {
