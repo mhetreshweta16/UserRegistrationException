@@ -19,6 +19,7 @@ namespace UserRegistrationException
         //User Registration Pattern
         string firstNamePattern = "^[A-Z]{1}[a-z]{2}$";
         string lastNamePattern = "^[A-Z]{1}[a-z]{2}$";
+        string emailPattern = "^[a-z]{3}[.][a-z]*[@]{1}[bl]{2}[.]{1}[co]{2}[.]{1}[a-z]*$";
 
         public string getValidUserFirstName()
         {
@@ -57,6 +58,27 @@ namespace UserRegistrationException
 
             }
             catch (ArgumentNullException ex)
+            {
+                throw new CustomException(CustomException.ExceptionType.ArgumentNullException, "invalid");
+                //Console.WriteLine(ex);
+            }
+        }
+
+        public string getValidUserEmail()
+        {
+            Regex regex = new Regex(emailPattern);
+            try
+            {
+                if (regex.IsMatch(message))
+                {
+                    //Console.WriteLine(word + "---> valid");
+                    return "valid";
+                }
+                else
+                    return "invalid";
+
+            }
+            catch (Exception ex)
             {
                 throw new CustomException(CustomException.ExceptionType.ArgumentNullException, "invalid");
                 //Console.WriteLine(ex);
