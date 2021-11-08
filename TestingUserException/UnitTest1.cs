@@ -24,8 +24,8 @@ namespace TestingUserException
             {
                 //Assert
                 Assert.AreEqual(expected, ex.Message);
-            }          
-            
+            }
+
         }
 
         [TestMethod]
@@ -56,7 +56,7 @@ namespace TestingUserException
 
             //Act
             UserException testing = new UserException(message);
-            
+
             try
             {
                 string actual = testing.getValidUserEmail();
@@ -67,5 +67,47 @@ namespace TestingUserException
                 Assert.AreEqual(expected, ex.Message);
             }
         }
+
+        [TestMethod]
+        public void TestUserMobileNumber()
+        {
+            string message = null;
+            string expected = "invalid";
+
+            //Act
+            UserException testing = new UserException(message);
+
+            try
+            {
+                string actual = testing.getValidUserMobileNumber();
+            }
+            catch (CustomException ex)
+            {
+                //Assert
+                Assert.AreEqual(expected, ex.Message);
+            }
+        }
+
+        [TestMethod]
+        public void TestUserPassword()
+        {
+            string message = null;
+            string expected = "invalid";
+
+            //Act
+            UserException testing = new UserException(message);
+
+            try
+            {
+                string actual = testing.getValidUserPassword();
+            }
+            catch (CustomException ex)
+            {
+                //Assert
+                Assert.AreEqual(expected, ex.Message);
+            }
+
+        }
+        
     }
 }

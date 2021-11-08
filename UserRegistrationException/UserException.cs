@@ -20,6 +20,8 @@ namespace UserRegistrationException
         string firstNamePattern = "^[A-Z]{1}[a-z]{2}$";
         string lastNamePattern = "^[A-Z]{1}[a-z]{2}$";
         string emailPattern = "^[a-z]{3}[.][a-z]*[@]{1}[bl]{2}[.]{1}[co]{2}[.]{1}[a-z]*$";
+        string mobileNoPattern = "^[1-9]{2}[ ]{1}[0-9]{10}$";
+        string passwordPattern = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8}$";
 
         public string getValidUserFirstName()
         {
@@ -83,6 +85,51 @@ namespace UserRegistrationException
                 throw new CustomException(CustomException.ExceptionType.ArgumentNullException, "invalid");
                 //Console.WriteLine(ex);
             }
+        }
+
+        public string getValidUserMobileNumber()
+        {
+            Regex regex = new Regex(mobileNoPattern);
+            try
+            {
+                if (regex.IsMatch(message))
+                {
+                    //Console.WriteLine(word + "---> valid");
+                    return "valid";
+                }
+                else
+                    return "invalid";
+
+            }
+            catch (Exception ex)
+            {
+                throw new CustomException(CustomException.ExceptionType.ArgumentNullException, "invalid");
+                //Console.WriteLine(ex);
+            }
+
+        }
+
+        public string getValidUserPassword()
+        {
+
+            Regex regex = new Regex(passwordPattern);
+            try
+            {
+                if (regex.IsMatch(message))
+                {
+                    //Console.WriteLine(word + "---> valid");
+                    return "valid";
+                }
+                else
+                    return "invalid";
+
+            }
+            catch (Exception ex)
+            {
+                throw new CustomException(CustomException.ExceptionType.ArgumentNullException, "invalid");
+                //Console.WriteLine(ex);
+            }
+
         }
 
     }
